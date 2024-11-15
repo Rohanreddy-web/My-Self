@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan_Reddy</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fa5774ac0e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        * {
+            font-family: "Space Mono", monospace;
+            font-style: normal;
+            margin-top: 0px;
+        }
+
+        .cont {
+            width: 80vw;
+            height: auto;
+            margin: auto;
+            margin-top: 0px;
+        }
+
+        .first {
+            display: flex;
+            align-items: center;
+            column-gap: 60px;
+            padding-left: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: gray;
+            font-weight: 600;
+        }
+
+        img {
+            width: 30vw;
+            height: 40vh;
+            object-fit: cover;
+            padding: 30px;
+        }
+
+        hr {
+            height: 2px;
+            background-color: gray;
+            border: none;
+        }
+
+        .moon {
+            position: absolute;
+            right: 30px;
+            width: 50px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+            margin-top: 10px;
+        }
+
+        .col2 {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .my {
+            font-size: 18px;
+        }
+
+        strong {
+            color: green;
+        }
+
+        @media screen and (max-width: 768px) {
+            .cont {
+                width: 90vw;
+            }
+
+            .first {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            img {
+                width: 60vw;
+                object-fit: contain;
+            }
+
+            .moon {
+                right: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cont {
+                width: 95vw;
+            }
+
+            .first {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            img {
+                width: 80vw;
+                object-fit: contain;
+            }
+
+            .moon {
+                right: 5px;
+                width: 40px;
+                height: 50px;
+            }
+
+            .my {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span class="moon"><i class="fa-solid fa-moon"></i></span>
+    <div class="cont">
+        <div class="first">
+            <img src="photo.jpg" alt="my_self" srcset="">
+            <div class="links">
+                <h1>Rohan_Reddy</h1>
+                <p><a href="https://github.com/Rohanreddy-web">[GetHub]</a></p>
+                <p><a href="https://x.com/CodewebHub_106">[X.com]</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="myself">
+            <p class="my"> hay, I'm <strong>Rohan_Reddy</strong>, a student studying Computer Science and Engineering
+                with a passion for web development. I'm currently learning the MERN stack (MongoDB, Express.js, React,
+                and Node.js) and focusing on building a strong foundation in HTML, CSS, and JavaScript. I love exploring
+                new technologies, enhancing my skills, and working on projects that solve real-world problems</p>
+            <p class="my"> I'm excited to keep growing in the field of web development and look forward to creating
+                impactful applications!</p>
+            <p class="my">go to my github to look at some of the things i've made!</p>
+        </div>
+        <hr>
+        <div class="contact">
+            <p>Contact me:</p>
+            <p><a href="mailto:rohanreddysai@gmail.com">[email:rohanreddysai@gmail.com]</a></p>
+            <p><a href="https://x.com/CodewebHub_106">[X:@Rohan_Reddy]</a></p>
+        </div>
+        <hr>
+        Thanks for visiting!
+    </div>
+    <script>
+        let change = document.querySelector(".moon").getElementsByTagName("i")[0]
+        let cont = document.querySelector(".cont")
+        if (!localStorage.getItem("Theam") || !localStorage.getItem("color")) {
+            localStorage.setItem("Theam1", "col2")
+        }
+        let a = localStorage.getItem("Theam1")
+        document.body.classList.add(a)
+        function change_theam() {
+            document.body.classList.toggle(a)
+        }
+        change.addEventListener("click", change_theam)
+
+    </script>
+</body>
+
+</html>
