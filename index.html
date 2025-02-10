@@ -1,185 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rohan_Reddy</title>
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/fa5774ac0e.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333333;
+            --link-color: #1a73e8;
+            --accent-color: #ff5722;
+            --button-bg: #1a73e8;
+            --button-color: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --link-color: #8ab4f8;
+            --accent-color: #ff8a65;
+            --button-bg: #8ab4f8;
+            --button-color: #121212;
+        }
 
         * {
-            font-family: "Space Mono", monospace;
-            font-style: normal;
-            margin-top: 0px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .cont {
-            width: 80vw;
-            height: auto;
-            margin: auto;
-            margin-top: 0px;
+            width: min(80vw, 1200px);
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
         .first {
             display: flex;
             align-items: center;
-            column-gap: 60px;
-            padding-left: 0px;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .links h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
         }
 
         a {
             text-decoration: none;
-            color: gray;
+            color: var(--link-color);
             font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
         }
 
         img {
-            width: 30vw;
-            height: 40vh;
+            width: 300px;
+            height: 400px;
             object-fit: cover;
-            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         hr {
             height: 2px;
-            background-color: gray;
+            background-color: var(--link-color);
             border: none;
+            margin: 2rem 0;
         }
 
-        .moon {
-            position: absolute;
-            right: 30px;
-            width: 50px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 3px;
-            margin-top: 10px;
+        .theme-toggle {
+            position: fixed;
+            right: 2rem;
+            top: 2rem;
+            background: var(--button-bg);
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            color: var(--button-color);
+            border-radius: 4px;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
-        .col2 {
-            background-color: black;
-            color: aliceblue;
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
         }
 
         .my {
-            font-size: 18px;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         strong {
-            color: green;
+            color: var(--accent-color);
+        }
+
+        .contact p {
+            margin-bottom: 0.5rem;
         }
 
         @media screen and (max-width: 768px) {
-            .cont {
-                width: 90vw;
-            }
-
             .first {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+                gap: 2rem;
             }
 
             img {
-                width: 60vw;
-                object-fit: contain;
+                width: min(60vw, 300px);
+                height: auto;
             }
 
-            .moon {
-                right: 20px;
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
             }
         }
 
         @media screen and (max-width: 480px) {
             .cont {
                 width: 95vw;
-            }
-
-            .first {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            img {
-                width: 80vw;
-                object-fit: contain;
-            }
-
-            .moon {
-                right: 5px;
-                width: 40px;
-                height: 50px;
+                margin: 1rem auto;
             }
 
             .my {
-                font-size: 16px;
+                font-size: 1rem;
             }
 
             h1 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 14px;
-            }
-
-            a {
-                font-size: 14px;
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 
 <body>
-
-    <span class="moon"><i class="fa-solid fa-moon"></i></span>
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
     <div class="cont">
         <div class="first">
-            <img src="photo.jpg" alt="my_self" srcset="">
+            <img src="photo.jpg" alt="Profile photo of Rohan Reddy" />
             <div class="links">
                 <h1>Rohan_Reddy</h1>
-                <p><a href="https://github.com/Rohanreddy-web">[GitHub]</a></p>
-                <p><a href="https://x.com/CodewebHub_106">[X.com]</a></p>
+                <p><a href="https://github.com/Rohanreddy-web" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
+                <p><a href="https://x.com/CodewebHub_106" target="_blank" rel="noopener noreferrer">[X.com]</a></p>
             </div>
         </div>
-        <hr>
+        <hr />
         <div class="myself">
-            <p class="my"> hay, I'm <strong>Rohan_Reddy</strong>, a student studying Computer Science and Engineering
-                with a passion for web development. I'm currently learning the MERN stack (MongoDB, Express.js, React,
-                and Node.js) and focusing on building a strong foundation in HTML, CSS, and JavaScript. I love exploring
-                new technologies, enhancing my skills, and working on projects that solve real-world problems</p>
-            <p class="my"> I'm excited to keep growing in the field of web development and look forward to creating
-                impactful applications!</p>
-            <p class="my">go to my github to look at some of the things i've made!</p>
+            <p class="my">
+                Hey, I'm <strong>Rohan_Reddy</strong>, a student studying Computer Science and Engineering with a
+                passion for web development. I'm currently learning the MERN stack (MongoDB, Express.js, React, and Node.js)
+                and focusing on building a strong foundation in HTML, CSS, and JavaScript. I love exploring new
+                technologies, enhancing my skills, and working on projects that solve real-world problems.
+            </p>
+            <p class="my">
+                I'm excited to keep growing in the field of web development and look forward to creating impactful
+                applications!
+            </p>
+            <p class="my">
+                Go to my GitHub to look at some of the things I've made!
+            </p>
         </div>
-        <hr>
+        <hr />
         <div class="contact">
             <p>Contact me:</p>
-            <p><a href="mailto:rohanreddysai@gmail.com">[email:rohanreddysai@gmail.com]</a></p>
-            <p><a href="https://x.com/CodewebHub_106">[X:@Rohan_Reddy]</a></p>
+            <p><a href="mailto:rohanreddysai@gmail.com">[email: rohanreddysai@gmail.com]</a></p>
+            <p><a href="https://x.com/CodewebHub_106" target="_blank" rel="noopener noreferrer">[X: @Rohan_Reddy]</a></p>
         </div>
-        <hr>
-        Thanks for visiting!
+        <hr />
+        <p>Thanks for visiting!</p>
     </div>
-    <script>
-        let change = document.querySelector(".moon").getElementsByTagName("i")[0]
-        let cont = document.querySelector(".cont")
-        if (!localStorage.getItem("Theam") || !localStorage.getItem("color")) {
-            localStorage.setItem("Theam1", "col2")
-        }
-        let a = localStorage.getItem("Theam1")
-        document.body.classList.add(a)
-        function change_theam() {
-            document.body.classList.toggle(a)
-        }
-        change.addEventListener("click", change_theam)
 
+    <script>
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.dataset.theme = savedTheme;
+        } else if (prefersDarkScheme.matches) {
+            document.body.dataset.theme = 'dark';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? '' : 'dark';
+            document.body.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                document.body.dataset.theme = e.matches ? 'dark' : '';
+            }
+        });
     </script>
 </body>
-
 </html>
