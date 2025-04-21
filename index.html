@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohan_Reddy</title>
+    <title>Rohan Reddy | Lifelong Learner</title>
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/fa5774ac0e.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
         :root {
-            --bg-color: #f4f4f9;
-            --text-color: #333333;
-            --link-color: #1a73e8;
-            --accent-color: #ff5722;
-            --button-bg: #1a73e8;
+            --bg-color: #ffffff;
+            --text-color: #2d2d2d;
+            --link-color: #007bff;
+            --accent-color: #ff6b6b;
+            --button-bg: #007bff;
             --button-color: #ffffff;
+            --card-bg: #f8f9fa;
         }
 
         [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --link-color: #8ab4f8;
-            --accent-color: #ff8a65;
-            --button-bg: #8ab4f8;
-            --button-color: #121212;
+            --bg-color: #0a0a23;
+            --text-color: #e0e0e0;
+            --link-color: #66b0ff;
+            --accent-color: #ff8787;
+            --button-bg: #66b0ff;
+            --button-color: #0a0a23;
+            --card-bg: #1b1b32;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Roboto", sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
@@ -40,22 +42,41 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .cont {
-            width: min(80vw, 1200px);
+        .container {
+            width: min(85vw, 1200px);
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        .first {
+        .header {
             display: flex;
             align-items: center;
             gap: 2rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
-        .links h1 {
+        .profile-img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .intro p {
+            margin: 0.5rem 0;
         }
 
         a {
@@ -69,19 +90,12 @@
             color: var(--accent-color);
         }
 
-        img {
-            width: 300px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
         hr {
             height: 2px;
             background-color: var(--link-color);
             border: none;
             margin: 2rem 0;
+            opacity: 0.3;
         }
 
         .theme-toggle {
@@ -91,9 +105,10 @@
             background: var(--button-bg);
             border: none;
             cursor: pointer;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             color: var(--button-color);
-            border-radius: 4px;
+            border-radius: 8px;
+            font-size: 1rem;
             transition: transform 0.2s, background-color 0.3s;
         }
 
@@ -102,29 +117,67 @@
             background-color: var(--accent-color);
         }
 
-        .my {
-            font-size: 1.125rem;
-            line-height: 1.6;
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .about p, .learning p {
+            font-size: 1.1rem;
+            line-height: 1.7;
             margin-bottom: 1rem;
         }
 
-        strong {
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .learning-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .learning-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .learning-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: var(--accent-color);
         }
 
         .contact p {
             margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
         }
 
         @media screen and (max-width: 768px) {
-            .first {
+            .header {
                 flex-direction: column;
                 text-align: center;
-                gap: 2rem;
             }
 
-            img {
-                width: min(60vw, 300px);
+            .profile-img {
+                width: min(70vw, 250px);
                 height: auto;
             }
 
@@ -135,17 +188,21 @@
         }
 
         @media screen and (max-width: 480px) {
-            .cont {
-                width: 95vw;
+            .container {
+                width: 90vw;
                 margin: 1rem auto;
             }
 
-            .my {
-                font-size: 1rem;
+            .intro h1 {
+                font-size: 2rem;
             }
 
-            h1 {
+            .section h2 {
                 font-size: 1.5rem;
+            }
+
+            .about p, .learning p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -155,46 +212,63 @@
     <button class="theme-toggle" aria-label="Toggle dark mode">
         <i class="fa-solid fa-moon"></i>
     </button>
-    
-    <div class="cont">
-        <div class="first">
-            <img src="photo.jpg" alt="Profile photo of Rohan Reddy" />
-            <div class="links">
-                <h1>Rohan_Reddy</h1>
+
+    <div class="container">
+        <div class="header">
+            <img src="photo.jpg" alt="Profile photo of Rohan Reddy" class="profile-img" />
+            <div class="intro">
+                <h1>Rohan Reddy</h1>
                 <p><a href="https://github.com/Rohanreddy-web" target="_blank" rel="noopener noreferrer">[GitHub]</a></p>
                 <p><a href="https://x.com/CodewebHub_106" target="_blank" rel="noopener noreferrer">[X.com]</a></p>
             </div>
         </div>
         <hr />
-        <div class="myself">
-            <p class="my">
-                Hey, I'm <strong>Rohan_Reddy</strong>, a student studying Computer Science and Engineering with a
-                passion for web development and Machine learning. I'm currently learning the MERN stack (MongoDB, Express.js, React, and Node.js)
-                and focusing on building a strong foundation in HTML, CSS, and JavaScript. I love exploring new
-                technologies, enhancing my skills, and working on projects that solve real-world problems.
+        <div class="section about">
+            <h2>About Me</h2>
+            <p>
+                Hey, I'm <strong>Rohan Reddy</strong>, a Computer Science and Engineering student driven by a passion for learning and creating. I’m diving deep into web development with the MERN stack (MongoDB, Express.js, React, Node.js) and exploring Machine Learning to build innovative solutions.
             </p>
-            <p class="my">
-                I'm excited to keep growing in the field of web development and look forward to creating impactful
-                applications!
-            </p>
-            <p class="my">
-                Go to my GitHub to look at some of the things I've made!
+            <p>
+                My journey is all about embracing new technologies, mastering HTML, CSS, and JavaScript, and tackling real-world problems through projects. Check out my GitHub for a glimpse of my work!
             </p>
         </div>
         <hr />
-        <div class="contact">
-            <p>Contact me:</p>
-            <p><a href="mailto:rohanreddysai@gmail.com">[email: rohanreddysai@gmail.com]</a></p>
-            <p><a href="https://x.com/CodewebHub_106" target="_blank" rel="noopener noreferrer">[X: @Rohan_Reddy]</a></p>
+        <div class="section learning">
+            <h2>Learning & Growth</h2>
+            <p>
+                Learning is at the core of everything I do. I’m constantly pushing my boundaries, whether it’s mastering Data Structures and Algorithms, building full-stack applications, or experimenting with new frameworks. Here’s what I’m currently focused on:
+            </p>
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <h3>MERN Stack</h3>
+                    <p>Building full-stack web apps with MongoDB, Express.js, React, and Node.js to create seamless user experiences.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>Machine Learning</h3>
+                    <p>Exploring ML algorithms and neural networks to develop intelligent systems that solve real-world challenges.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Strengthening problem-solving skills with Java, focusing on efficient code and optimized solutions.</p>
+                </div>
+            </div>
         </div>
         <hr />
-        <p>Thanks for visiting!</p>
+        <div class="section contact">
+            <h2>Contact Me</h2>
+            <p><a href="mailto:rohanreddysai@gmail.com">[Email: rohanreddysai@gmail.com]</a></p>
+            <p><a href="https://x.com/CodewebHub_106" target="_blank" rel="noopener noreferrer">[X: @CodewebHub_106]</a></p>
+        </div>
+        <hr />
+        <div class="footer">
+            <p>Thanks for visiting! Keep learning, keep creating.</p>
+        </div>
     </div>
 
     <script>
         const themeToggle = document.querySelector('.theme-toggle');
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             document.body.dataset.theme = savedTheme;
@@ -207,6 +281,7 @@
             const newTheme = currentTheme === 'dark' ? '' : 'dark';
             document.body.dataset.theme = newTheme;
             localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
         prefersDarkScheme.addEventListener('change', (e) => {
